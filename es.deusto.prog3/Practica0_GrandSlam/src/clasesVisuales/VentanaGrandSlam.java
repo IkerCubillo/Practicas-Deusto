@@ -13,14 +13,14 @@ import javax.swing.text.html.HTMLDocument.HTMLReader.IsindexAction;
 import clasesContenedoras.HistoriaGrandSlams;
 
 public class VentanaGrandSlam{
-	
+	JTabbedPane tpCentral = new JTabbedPane();
 	public static void main(String[] args) {
 		HistoriaGrandSlams hgs = new HistoriaGrandSlams();
 		
 //		Creacion objetos
 		JFrame ventanaPrincipal = new JFrame();
 		
-		JTabbedPane tpCentral = new JTabbedPane();
+		
 		
 		JPanel pestanaResultados = new JPanel();
 		JPanel pestanaTenistas = new JPanel();
@@ -77,11 +77,12 @@ public class VentanaGrandSlam{
 		tpCentral.addKeyListener(new KeyListener() {
 			
 			public void keyTyped(KeyEvent e) {
-				
+				System.out.println(e);
 			}
 
 			@Override
 			public void keyPressed(KeyEvent e) {
+				System.out.println(e);
 				if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_N) {
 					System.out.println("cntrl + N");
 					seleccionarAnyo();
@@ -93,6 +94,7 @@ public class VentanaGrandSlam{
 
 			@Override
 			public void keyReleased(KeyEvent e) {
+				System.out.println(e);
 			}
 		});
 		

@@ -2,9 +2,9 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2022-10-30T19:23:30.468353200Z</date>
-  <millis>1667157810468</millis>
-  <nanos>353200</nanos>
+  <date>2022-11-03T18:55:07.363493400Z</date>
+  <millis>1667501707363</millis>
+  <nanos>493400</nanos>
   <sequence>0</sequence>
   <logger>ud.prog3.pr01.ListaDeReproduccion</logger>
   <level>INFO</level>
@@ -14,10 +14,34 @@
   <message>Añadiendo ficheros con filtro *Pentatonix*.mp4</message>
 </record>
 <record>
-  <date>2022-10-30T19:23:30.489296900Z</date>
-  <millis>1667157810489</millis>
-  <nanos>296900</nanos>
+  <date>2022-11-03T18:55:07.387456900Z</date>
+  <millis>1667501707387</millis>
+  <nanos>456900</nanos>
   <sequence>1</sequence>
+  <logger>ud.prog3.pr01.ListaDeReproduccion</logger>
+  <level>INFO</level>
+  <class>ud.prog3.pr01.ListaDeReproduccion</class>
+  <method>add</method>
+  <thread>19</thread>
+  <message>Añadiendo ficheros con filtro .*Pentatonix.*\.mp4</message>
+</record>
+<record>
+  <date>2022-11-03T18:55:46.104713100Z</date>
+  <millis>1667501746104</millis>
+  <nanos>713100</nanos>
+  <sequence>2</sequence>
+  <logger>ud.prog3.pr01.ListaDeReproduccion</logger>
+  <level>INFO</level>
+  <class>ud.prog3.pr01.ListaDeReproduccion</class>
+  <method>add</method>
+  <thread>19</thread>
+  <message>Añadiendo ficheros con filtro *Pentatonix*.mp4</message>
+</record>
+<record>
+  <date>2022-11-03T18:55:46.105710500Z</date>
+  <millis>1667501746105</millis>
+  <nanos>710500</nanos>
+  <sequence>3</sequence>
   <logger>ud.prog3.pr01.ListaDeReproduccion</logger>
   <level>INFO</level>
   <class>ud.prog3.pr01.ListaDeReproduccion</class>
