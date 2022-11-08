@@ -1,3 +1,4 @@
+
 package es.deusto.prog3.pr01b;
 
 import java.awt.BorderLayout;
@@ -32,7 +33,7 @@ import javax.swing.JTextField;
 		private static int PUERTO = 4000;          // Puerto de conexión
 		private JTextArea taEstado = new JTextArea();
 		private JTextField tfMensaje = new JTextField( "Introduce tu mensaje y pulsa <Enter>" );
-//		private PrintWriter outputAServer;
+		private PrintWriter outputAServer;
         private boolean finComunicacion = false;
         private String nombre;
         private JLabel lPersonaje = new JLabel();
@@ -40,7 +41,7 @@ import javax.swing.JTextField;
         
         public static void main(String[] args) {
         	// Ejecucion principal
-        	VentanaCliente vc = new VentanaCliente();
+    		VentanaCliente vc = new VentanaCliente();
     		vc.setVisible( true );
     		(new Thread() {
     			@Override
@@ -179,18 +180,11 @@ import javax.swing.JTextField;
 			tfMensaje.addActionListener( new ActionListener() { // Evento de <enter> de textfield
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					
+					personaje.setMensaje(tfMensaje.getText());
+					lPersonaje.setText(personaje.getMensaje());
+					outputAServer.println( tfMensaje.getText() );
 					if (tfMensaje.getText().equals("fin")) {
 						finComunicacion = true;
-					}
-					personaje.setMensaje(tfMensaje.getText());
-					lPersonaje.setText(personaje.getMensaje());
-					personaje.setMensaje(tfMensaje.getText());
-					lPersonaje.setText(personaje.getMensaje());
-					try {
-						outputObjetoAServer.writeObject(tfMensaje.getText() );
-					} catch (IOException e1) {
-						e1.printStackTrace();
 					}
 					tfMensaje.setText( "" );
 				}
@@ -198,6 +192,7 @@ import javax.swing.JTextField;
 			addWindowListener( new WindowAdapter() {
 				@Override
 				public void windowClosing(WindowEvent e) {
+					outputAServer.println( "fin" );
 					finComunicacion = true;
 				}
 			});
@@ -206,27 +201,29 @@ import javax.swing.JTextField;
 		public void lanzaCliente() {
 	        try (Socket socket = new Socket( HOST, PUERTO )) {
 	           
-				ObjectInputStream inputObjetoDesdeServer = new ObjectInputStream(socket.getInputStream());  // Canal de entrada de socket (leer del cliente)
-				outputObjetoAServer = new ObjectOutputStream(socket.getOutputStream());  // Canal de salida de socket (escribir al cliente)
+//				ObjectInputStream inputObjetoDesdeServer = new ObjectInputStream(socket.getInputStream());  // Canal de entrada de socket (leer del cliente)
+//				outputObjetoAServer = new ObjectOutputStream(socket.getOutputStream());  // Canal de salida de socket (escribir al cliente)
 
 	        	
-//	            BufferedReader inputDesdeServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-//	            outputAServer = new PrintWriter(socket.getOutputStream(), true);
+	            BufferedReader inputDesdeServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+	            outputAServer = new PrintWriter(socket.getOutputStream(), true);
 //            	flujoOut.writeObject( personaje);
 //            	System.out.println("personaje enviado" + personaje.toString());
 //            	System.out.println("personaje enviado");
 	            do { // Ciclo de lectura desde el servidor hasta que acabe la comunicación
+//	            	try {
+//						Object feedback1 = inputObjetoDesdeServer.readObject();
+//					} catch (ClassNotFoundException e) {
+//						e.printStackTrace();
+//					}
+//	            	System.out.println("personaje enviado1");
+	            	String feedback = inputDesdeServer.readLine();  // Ojo-bloqueante. Devuelve mensaje de servidor o null cuando se cierra la comunicación
 
-	            	
-					try {
-						Object feedback = inputObjetoDesdeServer.readObject();
-						if (feedback!=null) {
-		            		taEstado.append( feedback.toString() + "\n" );
-		            	} else {  // Comunicación cortada por el servidor o por error en comunicación
-		            		finComunicacion = true;
-		            	}
-					} catch (ClassNotFoundException e) {} 
-	     
+	            	if (feedback!=null) {
+	            		taEstado.append( feedback + "\n" );
+	            	} else {  // Comunicación cortada por el servidor o por error en comunicación
+	            		finComunicacion = true;
+	            	}
 	            } while (!finComunicacion);
 	            
 	        } catch (IOException e) {
@@ -240,3 +237,4 @@ import javax.swing.JTextField;
 	        }
 	    }
 	}
+
