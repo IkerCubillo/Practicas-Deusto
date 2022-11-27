@@ -13,14 +13,14 @@ import javax.swing.text.html.HTMLDocument.HTMLReader.IsindexAction;
 import clasesContenedoras.HistoriaGrandSlams;
 
 public class VentanaGrandSlam{
-	JTabbedPane tpCentral = new JTabbedPane();
+	
 	public static void main(String[] args) {
 		HistoriaGrandSlams hgs = new HistoriaGrandSlams();
 		
 //		Creacion objetos
 		JFrame ventanaPrincipal = new JFrame();
 		
-		
+		JTabbedPane tpCentral = new JTabbedPane();
 		
 		JPanel pestanaResultados = new JPanel();
 		JPanel pestanaTenistas = new JPanel();
