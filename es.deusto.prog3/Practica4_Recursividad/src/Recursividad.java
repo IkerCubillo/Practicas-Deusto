@@ -26,6 +26,14 @@ public class Recursividad {
 		}
 	}
 	
+	public static String invertirFrase(String palabra) {
+        if (palabra.length() <= 1) {
+            return palabra;
+        } else {
+        	System.out.println(palabra);
+            return invertirFrase(palabra.substring(1)) + palabra.charAt(0);
+        }
+    }
 	
 }
 
