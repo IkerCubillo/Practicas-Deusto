@@ -1,21 +1,42 @@
+import java.util.ArrayList;
 
 public class Recursividad {
+	static ArrayList<Carta> baraja = new ArrayList<>();
 	public static void main(String[] args) {
-		System.out.println(invertirFraseSabin("Esta funcion invierte la frase recursivamente"));
-		System.out.println(invertirFraseSabin("Andoni Eguiluz es mi profesor de Programación"));
-		System.out.println(invertirFraseSabin("Las patatas fritas existen para untarse en el huevo"));
+		añadirCartasBaraja();
+		System.out.println(baraja);
 		
-		System.out.println(invertirFraseCubillo("Esta funcion invierte la frase recursivamente", ""));
-		System.out.println(invertirFraseCubillo("Andoni Eguiluz es mi profesor de Programación", ""));
-		System.out.println(invertirFraseCubillo("Las patatas fritas existen para untarse en el huevo", ""));
+//		System.out.println(invertirFraseSabin("Esta funcion invierte la frase recursivamente"));
+//		System.out.println(invertirFraseSabin("Andoni Eguiluz es mi profesor de Programación"));
+//		System.out.println(invertirFraseSabin("Las patatas fritas existen para untarse en el huevo"));
+//		
+//		System.out.println(invertirFraseCubillo("Esta funcion invierte la frase recursivamente", ""));
+//		System.out.println(invertirFraseCubillo("Andoni Eguiluz es mi profesor de Programación", ""));
+//		System.out.println(invertirFraseCubillo("Las patatas fritas existen para untarse en el huevo", ""));
 		
-//		System.out.println(invertirPalabras("Patata; que tal: hey - g", args));
+		System.out.println(invertirPalabras("Patata que tal hey g"));
+		
+		
+	}
+	
+	
+	
+	private static void añadirCartasBaraja() {
+		String[] palos = {"oros", "bastos", "espadas", "copas"};
+		for(String p: palos) {
+			for(int i = 1; i <= 12; i++) {
+				baraja.add(new Carta(p, i));
+			}
+		}
 	}
 
-	private static String invertirPalabras(String fraseInicial, String[] camposReturn ) {
-		String[] campos = fraseInicial.split("[;:-,.] \n \t");
+	private static String invertirPalabras(String fraseInicial) {
+		String[] campos = fraseInicial.split(" ");
 		
-		return campos[0] + "" + campos[1] + "" +campos[2] + ""+ campos[3];
+		System.out.println(campos[0]);;
+		fraseInicial.replace("Patata", invertirFraseSabin("Patata"));
+		System.out.println(fraseInicial);
+		return fraseInicial;
 	}
 
 	private static String invertirFraseCubillo(String fraseInicial, String fraseReturn) {
