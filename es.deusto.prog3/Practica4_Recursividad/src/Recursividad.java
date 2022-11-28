@@ -4,7 +4,6 @@ public class Recursividad {
 	static ArrayList<Carta> baraja = new ArrayList<>();
 	public static void main(String[] args) {
 		añadirCartasBaraja();
-		System.out.println(baraja);
 		
 //		System.out.println(invertirFraseSabin("Esta funcion invierte la frase recursivamente"));
 //		System.out.println(invertirFraseSabin("Andoni Eguiluz es mi profesor de Programación"));
@@ -14,13 +13,43 @@ public class Recursividad {
 //		System.out.println(invertirFraseCubillo("Andoni Eguiluz es mi profesor de Programación", ""));
 //		System.out.println(invertirFraseCubillo("Las patatas fritas existen para untarse en el huevo", ""));
 		
-		System.out.println(invertirPalabras("Patata que tal hey g"));
+		System.out.println(invertirPalabras("Patata;que-tal,he.a:g"));
+		
+//		posiblesManos(2,baraja);
 		
 		
 	}
 	
 	
 	
+	private static void posiblesManos(int i, ArrayList<Carta> baraja) {
+		if(i == 0) {
+//			return "";
+		} else {
+			for (int i1 = 1; i1 <= baraja.size(); i++) {
+				for (int i11 = 1; i11 <= baraja.size()-1; i++) {
+					for (int i111 = 1; i111 <= baraja.size()-2; i++) {
+						System.out.println( "" + baraja.get(i1) + baraja.get(i11) + baraja.get(i111) );
+					}
+				}
+				
+				
+			}
+//			return "";
+		}
+		
+//		for (Carta c : baraja) {
+//			for (Carta c2 : baraja) {
+//				for (Carta c3 : baraja) {
+//					System.out.println( "" + c + c2 + c3 );
+//				}
+//			}
+//		}
+		
+	}
+
+
+
 	private static void añadirCartasBaraja() {
 		String[] palos = {"oros", "bastos", "espadas", "copas"};
 		for(String p: palos) {
@@ -31,11 +60,13 @@ public class Recursividad {
 	}
 
 	private static String invertirPalabras(String fraseInicial) {
-		String[] campos = fraseInicial.split(" ");
+		String[] campos = fraseInicial.split("[;:-\\.]");
+		System.out.println(campos.length);
+		for(String c: campos ) {
+			System.out.println(c);
+		}
 		
-		System.out.println(campos[0]);;
-		fraseInicial.replace("Patata", invertirFraseSabin("Patata"));
-		System.out.println(fraseInicial);
+		fraseInicial = fraseInicial.replace("Patata", invertirFraseSabin("Patata"));
 		return fraseInicial;
 	}
 
