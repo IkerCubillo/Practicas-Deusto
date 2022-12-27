@@ -1,52 +1,28 @@
-<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2022-11-03T18:55:07.363493400Z</date>
-  <millis>1667501707363</millis>
-  <nanos>493400</nanos>
+  <date>2022-11-30T17:13:13.421644900Z</date>
+  <millis>1669828393421</millis>
+  <nanos>644900</nanos>
   <sequence>0</sequence>
   <logger>ud.prog3.pr01.ListaDeReproduccion</logger>
   <level>INFO</level>
   <class>ud.prog3.pr01.ListaDeReproduccion</class>
   <method>add</method>
   <thread>19</thread>
-  <message>Añadiendo ficheros con filtro *Pentatonix*.mp4</message>
+  <message>Aï¿½adiendo ficheros con filtro *Pentatonix*.mp4</message>
 </record>
 <record>
-  <date>2022-11-03T18:55:07.387456900Z</date>
-  <millis>1667501707387</millis>
-  <nanos>456900</nanos>
+  <date>2022-11-30T17:13:13.446578700Z</date>
+  <millis>1669828393446</millis>
+  <nanos>578700</nanos>
   <sequence>1</sequence>
   <logger>ud.prog3.pr01.ListaDeReproduccion</logger>
   <level>INFO</level>
   <class>ud.prog3.pr01.ListaDeReproduccion</class>
   <method>add</method>
   <thread>19</thread>
-  <message>Añadiendo ficheros con filtro .*Pentatonix.*\.mp4</message>
-</record>
-<record>
-  <date>2022-11-03T18:55:46.104713100Z</date>
-  <millis>1667501746104</millis>
-  <nanos>713100</nanos>
-  <sequence>2</sequence>
-  <logger>ud.prog3.pr01.ListaDeReproduccion</logger>
-  <level>INFO</level>
-  <class>ud.prog3.pr01.ListaDeReproduccion</class>
-  <method>add</method>
-  <thread>19</thread>
-  <message>Añadiendo ficheros con filtro *Pentatonix*.mp4</message>
-</record>
-<record>
-  <date>2022-11-03T18:55:46.105710500Z</date>
-  <millis>1667501746105</millis>
-  <nanos>710500</nanos>
-  <sequence>3</sequence>
-  <logger>ud.prog3.pr01.ListaDeReproduccion</logger>
-  <level>INFO</level>
-  <class>ud.prog3.pr01.ListaDeReproduccion</class>
-  <method>add</method>
-  <thread>19</thread>
-  <message>Añadiendo ficheros con filtro .*Pentatonix.*\.mp4</message>
+  <message>Aï¿½adiendo ficheros con filtro .*Pentatonix.*\.mp4</message>
 </record>
 </log>
